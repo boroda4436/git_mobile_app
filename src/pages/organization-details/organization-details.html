@@ -1,0 +1,40 @@
+<!--
+  Generated template for the OrganizationDetails page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{organization?.login}}'s details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngIf="organization?.login">
+      <ion-icon name="contact" item-left></ion-icon>
+      <ion-label>Name: {{organization?.login}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="organization?.location">
+      <ion-icon name="locate" item-left></ion-icon>
+      <ion-label>Location: {{organization?.location}}</ion-label>
+    </ion-item>
+    <ion-item *ngIf="organization?.html_url">
+      <ion-icon name="compass" item-left></ion-icon>
+      <ion-label>URL: <a href="{{organization?.html_url}}">{{organization?.html_url}}</a></ion-label>
+    </ion-item>
+    <ion-card *ngIf="organization?.description">
+      <ion-card-header>
+        Description
+      </ion-card-header>
+      <ion-card-content>
+        {{organization?.description}}
+      </ion-card-content>
+    </ion-card>
+
+  </ion-list>
+</ion-content>
